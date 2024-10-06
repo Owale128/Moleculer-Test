@@ -1,15 +1,11 @@
-import { Context, ServiceSchema } from "moleculer";
 
-
-const MathService: ServiceSchema = {
+module.exports = {
 name: 'math',
 actions: {
-    add(ctx: Context<{a: number, b: number}>) {
+    add(ctx: { params: { a: number; b: number; }}) {
             const {a, b} = ctx.params
             
         return a + b
         }
     }
 }
-
-export default MathService

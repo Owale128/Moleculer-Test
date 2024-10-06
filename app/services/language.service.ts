@@ -1,10 +1,9 @@
-import { Context, ServiceSchema } from "moleculer";
 
-
-const LanguageService: ServiceSchema = {
+module.exports = {
     name: 'language',
     actions: {
-        getText(ctx: Context <{language: 'sv'|'en' |'fr'}>) {
+        getText(ctx: {params: {language: 'sv'|'en' |'fr'} }) {
+
             const {language} = ctx.params
 
             const translations = {
@@ -18,5 +17,3 @@ const LanguageService: ServiceSchema = {
         }
     }
 }
-
-export default LanguageService
